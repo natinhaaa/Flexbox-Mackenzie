@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Natália e Gabrielly">
+    <title>Vídeo Explicativo — Flexbox | Mackenzie SI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --red: #CC0000;
+            --red-dark: #A80000;
+            --black: #1a1a1a;
+            --gray-nav: #3d3d3d;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Barlow', sans-serif; background: var(--white); color: var(--black); }
+
+        .topbar {
+            background: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 32px;
+            height: 60px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .topbar-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-circle {
+            width: 42px; height: 42px; border-radius: 50%;
+            border: 3px solid var(--red);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900; font-size: 20px; color: var(--red);
+        }
+        .topbar-logo span {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 800; font-size: 22px; color: var(--black);
+        }
+        .topbar-links { display: flex; align-items: center; gap: 6px; }
+        .topbar-links a {
+            text-decoration: none; font-size: 12px; font-weight: 600;
+            color: var(--black); padding: 5px 12px;
+            border: 1.5px solid #ccc; border-radius: 20px; white-space: nowrap;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .topbar-links a:hover { border-color: var(--red); color: var(--red); }
+        .topbar-links .portal { background: var(--red); color: white; border-color: var(--red); }
+
+        nav.main-nav {
+            background: var(--gray-nav);
+            display: flex; justify-content: center; align-items: stretch; flex-wrap: wrap;
+        }
+        nav.main-nav a {
+            color: white; text-decoration: none; font-size: 12px; font-weight: 600;
+            padding: 14px 18px; text-align: center; line-height: 1.3;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            transition: background 0.2s; white-space: nowrap;
+        }
+        nav.main-nav a:first-child { border-left: 1px solid rgba(255,255,255,0.1); }
+        nav.main-nav a:hover { background: rgba(255,255,255,0.12); }
+        nav.main-nav a.active { background: var(--red); }
+
+        .page-hero {
+            background: var(--red);
+            padding: 40px 60px;
+        }
+        .page-hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900; font-size: 56px; color: white;
+            text-transform: uppercase; line-height: 1;
+        }
+        .page-hero p {
+            font-size: 15px; color: rgba(255,255,255,0.82);
+            margin-top: 10px;
+        }
+
+        .video-layout {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            padding: 50px 60px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .video-main {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex: 1 1 520px;
+        }
+
+        .video-main h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 28px; font-weight: 800;
+            color: var(--black);
+        }
+
+        video {
+            width: 100%;
+            border: 3px solid var(--red);
+            border-radius: 4px;
+            background: #000;
+            display: block;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #111;
+            border: 3px solid var(--red);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            color: white;
+        }
+        .video-placeholder .icon { font-size: 60px; opacity: 0.5; }
+        .video-placeholder p { font-size: 13px; opacity: 0.4; font-style: italic; text-align: center; max-width: 300px; }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 0 1 260px;
+        }
+
+        .side-card {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid var(--red);
+            border-radius: 4px;
+            padding: 18px 20px;
+        }
+
+        .side-card h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 15px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 1px;
+            color: var(--red); margin-bottom: 12px;
+        }
+
+        .side-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .side-card ul li {
+            font-size: 13px; color: #444;
+            display: flex; align-items: flex-start; gap: 6px;
+        }
+
+        .side-card ul li::before {
+            content: "→";
+            color: var(--red);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--red);
+            color: white;
+            text-decoration: none;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 12px 22px;
+            transition: background 0.2s;
+        }
+        .back-btn:hover { background: var(--red-dark); }
+
+        footer {
+            background: var(--red);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 18px 60px;
+        }
+        .ft-logo { display: flex; align-items: center; gap: 10px; }
+        .ft-logo .logo-circle { border-color: white; color: white; }
+        .ft-logo span {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 17px; font-weight: 700; color: white;
+        }
+        footer p { font-size: 12px; color: rgba(255,255,255,0.7); }
+    </style>
+</head>
+<body>
+
+<div class="topbar">
+    <a class="topbar-logo" href="index.html">
+        <div class="logo-circle">M</div>
+        <span>Mackenzie</span>
+    </a>
+    <div class="topbar-links">
+        <a href="#">Alumni</a>
+        <a href="#">MackPlay</a>
+        <a href="#" class="portal">Portal do Aluno</a>
+    </div>
+</div>
+
+<nav class="main-nav">
+    <a href="index.html">Mackenzie</a>
+    <a href="index.html">Processos Seletivos</a>
+    <a href="#">Graduação</a>
+    <a href="#">EaD</a>
+    <a href="video.html" class="active">▶ Vídeo Explicativo</a>
+</nav>
+
+<div class="page-hero">
+    <h1>Vídeo Explicativo<br>Flexbox</h1>
+    <p>Como o display: flex foi aplicado na construção desta página</p>
+</div>
+
+<div class="video-layout">
+
+    <div class="video-main">
+        <h2>Explicação do uso do Flexbox</h2>
+
+        <!-- Substitua o src pelo caminho do seu vídeo -->
+        <video class="video-explicativo" controls>
+            <source src="video/explicacao-flexbox.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+
+        <!-- Remova este bloco quando o vídeo estiver disponível -->
+        <div class="video-placeholder">
+            <div class="icon">▶</div>
+            <p>Adicione o arquivo na pasta /video/ e atualize o src acima</p>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="side-card">
+            <h3>Propriedades usadas</h3>
+            <ul>
+                <li>display: flex</li>
+                <li>flex-direction: row / column</li>
+                <li>justify-content</li>
+                <li>align-items</li>
+                <li>flex-wrap: wrap</li>
+                <li>gap</li>
+                <li>flex: 1 1 auto</li>
+            </ul>
+        </div>
+
+        <div class="side-card">
+            <h3>Onde foi aplicado</h3>
+            <ul>
+                <li>Menu de navegação</li>
+                <li>Logo do header</li>
+                <li>Banner hero</li>
+                <li>Cartões de conteúdo</li>
+                <li>Barra de números</li>
+                <li>Layout desta página</li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="back-btn">← Voltar ao Processo Seletivo</a>
+    </div>
+
+</div>
+
+<footer>
+    <div class="ft-logo">
+        <div class="logo-circle">M</div>
+        <span>Universidade Presbiteriana Mackenzie</span>
+    </div>
+    <p>Desenvolvido por Natália e Gabrielly · Trabalho de Flexbox · 2025</p>
+</footer>
+</body>
+</html>
