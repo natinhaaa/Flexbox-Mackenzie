@@ -5,136 +5,503 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Natália e Gabrielly">
     <title>Processo Seletivo — Sistemas de Informação | Mackenzie</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet">
+
+    <!-- FONTES: IBM Plex Sans + IBM Plex Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- ÍCONES: Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-    <a class="topbar-logo" href="index.html">
-        <div class="logo-circle"><img src="mackenzie-logo.png" alt="Logo Mackenzie"></div>
+<!-- ═══════════════════════════════════════════
+     BARRA SUPERIOR
+════════════════════════════════════════════ -->
+<header class="barra-superior">
+    <a class="barra-superior__logo" href="index.html">
+        <div class="logo-redondo">
+            <img src="mackenzie-logo-branco.png" alt="Logo Mackenzie">
+        </div>
         <span>Mackenzie</span>
     </a>
-    <div class="topbar-links">
-        <a href="#">Alumni</a>
-        <a href="#">MackPlay</a>
-        <a href="#">Revista</a>
-        <a href="#" class="portal">Portal do Aluno</a>
+    <div class="barra-superior__links">
+        <a href="#"><i class="fa-solid fa-user-graduate"></i> Alumni</a>
+        <a href="#"><i class="fa-solid fa-play"></i> MackPlay</a>
+        <a href="#"><i class="fa-solid fa-newspaper"></i> Revista</a>
+        <a href="#" class="barra-superior__link--portal">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Portal do Aluno
+        </a>
     </div>
-</div>
+</header>
 
-<!-- NAV -->
-<nav class="main-nav">
+<!-- ═══════════════════════════════════════════
+     MENU DE NAVEGAÇÃO
+════════════════════════════════════════════ -->
+<nav class="menu-principal">
     <a href="#">Mackenzie</a>
-    <a href="#" class="active">Processos Seletivos</a>
+    <a href="#" class="menu-principal__item--ativo">Processos Seletivos</a>
     <a href="#">Matrículas</a>
     <a href="#">Graduação</a>
     <a href="#">Pós-Graduação</a>
     <a href="#">EaD</a>
     <a href="#">Pesquisa e Inovação</a>
-    <a href="video.html">▶ Vídeo Explicativo</a>
+    <a href="video.html"><i class="fa-solid fa-circle-play"></i> Vídeo Explicativo</a>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-    <div class="hero-text">
-        <h1>Processo<br>Seletivo<br>Mackenzie</h1>
-        <p>Sistemas de Informação — Campus Higienópolis. Forme-se na universidade que eleva você à sua máxima potência.</p>
-        <a href="https://www.mackenzie.br/processos-seletivos/vestibular-graduacao/sao-paulo-higienopolis" target="_blank" class="hero-btn">
-            INSCREVA-SE
-            <span class="arrow">↗</span>
-        </a>
-    </div>
-    <div class="hero-right">
-        <div class="hero-tagline">
-            <p>Você elevado<br>à sua máxima<br>potência.</p>
+<!-- ═══════════════════════════════════════════
+     BANNER PRINCIPAL
+════════════════════════════════════════════ -->
+<div class="banner-principal">
+    <div class="banner-principal__conteudo">
+        <div class="banner-principal__etiqueta">
+            <i class="fa-solid fa-circle-dot"></i> Inscrições abertas · 2026/2
         </div>
-        <div class="hero-badge">
-            <div class="logo-circle"><img src="mackenzie-logo-branco.png" alt="Logo Mackenzie"></div>
-            <div class="badge-text">
-                Universidade Presbiteriana
-                <strong>Mackenzie</strong>
+        <h1 class="banner-principal__titulo">
+            Sistemas de<br>Informação
+        </h1>
+        <p class="banner-principal__subtitulo">
+            Campus Higienópolis · Noturno · 4 anos<br>
+            Forme-se onde tecnologia e gestão se encontram.
+        </p>
+        <div class="banner-principal__acoes">
+            <a href="https://www.mackenzie.br/processos-seletivos/vestibular-graduacao/sao-paulo-higienopolis"
+               target="_blank" class="banner-principal__botao-inscricao">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Inscreva-se agora
+            </a>
+            <a href="video.html" class="banner-principal__botao-video">
+                <i class="fa-solid fa-circle-play"></i> Ver vídeo
+            </a>
+        </div>
+    </div>
+    <div class="banner-principal__decoracao">
+        <div class="banner-principal__circulo-grande"></div>
+        <div class="banner-principal__circulo-pequeno"></div>
+        <div class="banner-principal__sigla">FCI</div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     STATUS DAS INSCRIÇÕES
+════════════════════════════════════════════ -->
+<div class="barra-status">
+    <div class="inscricao-status">
+        <span class="inscricao-status__indicador"></span>
+        Vestibular 2026/2º Semestre — Inscrições Abertas
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SEÇÃO: POR QUE MACKENZIE (CARDS)
+════════════════════════════════════════════ -->
+<div class="cabecalho-secao">
+    <div class="cabecalho-secao__linha"></div>
+    <h2>Por que Mackenzie?</h2>
+    <p class="cabecalho-secao__descricao">Conheça o curso, as formas de ingresso e a faculdade que vai mudar a sua trajetória.</p>
+</div>
+
+<div class="lista-cursos">
+
+    <div class="curso-card">
+        <div class="curso-card__capa curso-card__capa--vermelho">
+            <i class="fa-solid fa-laptop-code curso-card__icone"></i>
+        </div>
+        <div class="curso-card__conteudo">
+            <span class="curso-card__categoria">Graduação</span>
+            <h3>Sistemas de Informação</h3>
+            <p>Grade que une tecnologia, gestão e inovação. Curso presencial noturno — ideal para quem trabalha durante o dia. Você sai preparado para o mercado de tecnologia.</p>
+            <a href="https://www.mackenzie.br" class="curso-card__link" target="_blank">
+                Conhecer o curso <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="curso-card">
+        <div class="curso-card__capa curso-card__capa--cinza">
+            <i class="fa-solid fa-clipboard-list curso-card__icone curso-card__icone--escuro"></i>
+        </div>
+        <div class="curso-card__conteudo">
+            <span class="curso-card__categoria">Como se Inscrever</span>
+            <h3>Vestibular & ENEM</h3>
+            <p>Use sua nota do ENEM ou realize a prova própria do Mackenzie. Bolsas disponíveis via ProUni e FIES para candidatos que se qualificarem nos critérios.</p>
+            <a href="https://www.mackenzie.br/processos-seletivos/vestibular-graduacao/sao-paulo-higienopolis"
+               class="curso-card__link" target="_blank">
+                Inscrever-se agora <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="curso-card">
+        <div class="curso-card__capa curso-card__capa--escuro">
+            <i class="fa-solid fa-building-columns curso-card__icone"></i>
+        </div>
+        <div class="curso-card__conteudo">
+            <span class="curso-card__categoria">Sobre a FCI</span>
+            <h3>Faculdade de Computação e Informática</h3>
+            <p>A FCI oferece cursos de tecnologia de alta qualidade em Higienópolis, com laboratórios modernos e professores experientes do mercado nacional.</p>
+            <a href="https://www.mackenzie.br" class="curso-card__link" target="_blank">
+                Sobre a faculdade <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FAIXA DE ESTATÍSTICAS
+════════════════════════════════════════════ -->
+<div class="faixa-estatisticas">
+    <div class="estatistica">
+        <span class="estatistica__valor">4</span>
+        <span class="estatistica__descricao">Anos de duração</span>
+    </div>
+    <div class="estatistica">
+        <span class="estatistica__valor">Noturno</span>
+        <span class="estatistica__descricao">Período</span>
+    </div>
+    <div class="estatistica">
+        <span class="estatistica__valor">SP</span>
+        <span class="estatistica__descricao">Higienópolis</span>
+    </div>
+    <div class="estatistica">
+        <span class="estatistica__valor">FCI</span>
+        <span class="estatistica__descricao">Faculdade</span>
+    </div>
+    <div class="estatistica">
+        <span class="estatistica__valor">2026.2</span>
+        <span class="estatistica__descricao">Próxima turma</span>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SEÇÃO: GRADE CURRICULAR
+════════════════════════════════════════════ -->
+<div class="secao-grade">
+    <div class="cabecalho-secao">
+        <div class="cabecalho-secao__linha"></div>
+        <h2>Grade Curricular</h2>
+        <p class="cabecalho-secao__descricao">As disciplinas dos 8 semestres do curso de Sistemas de Informação — Campus Higienópolis.</p>
+    </div>
+
+    <!-- 1º ANO -->
+    <div class="grade-ano">
+        <div class="grade-ano__titulo">
+            <i class="fa-solid fa-circle-1"></i> 1º Ano
+        </div>
+        <div class="grade-semestres">
+
+            <div class="semestre-bloco">
+                <div class="semestre-bloco__cabecalho">
+                    <span class="semestre-bloco__numero">01</span>
+                    <span class="semestre-bloco__periodo">1º Semestre</span>
+                </div>
+                <ul class="semestre-bloco__materias">
+                    <li><i class="fa-solid fa-code"></i> Algoritmos e Programação I</li>
+                    <li><i class="fa-solid fa-atom"></i> Ciência, Tecnologia e Sociedade</li>
+                    <li><i class="fa-solid fa-scale-balanced"></i> Ética e Cidadania</li>
+                    <li><i class="fa-solid fa-circle-info"></i> Fund. de Sistemas de Informação</li>
+                    <li><i class="fa-solid fa-globe"></i> Fundamentos de Web</li>
+                    <li><i class="fa-solid fa-microchip"></i> Hardware para Computação</li>
+                </ul>
+            </div>
+
+            <div class="semestre-bloco">
+                <div class="semestre-bloco__cabecalho">
+                    <span class="semestre-bloco__numero">02</span>
+                    <span class="semestre-bloco__periodo">2º Semestre</span>
+                </div>
+                <ul class="semestre-bloco__materias">
+                    <li><i class="fa-solid fa-laptop-code"></i> Desenvolvimento de Sistemas I</li>
+                    <li><i class="fa-solid fa-square-root-variable"></i> Fundamentos de Matemática</li>
+                    <li><i class="fa-solid fa-church"></i> Introdução à Cosmovisão Reformada</li>
+                    <li><i class="fa-solid fa-diagram-project"></i> Introdução à Eng. de Software</li>
+                    <li><i class="fa-solid fa-server"></i> Introdução a Sistemas Operacionais</li>
+                    <li><i class="fa-solid fa-terminal"></i> Programação de Sistemas I</li>
+                    <li><i class="fa-solid fa-mobile-screen"></i> Web Mobile</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 2º ANO -->
+    <div class="grade-ano">
+        <div class="grade-ano__titulo">
+            <i class="fa-solid fa-circle-2"></i> 2º Ano
+        </div>
+        <div class="grade-semestres">
+
+            <div class="semestre-bloco">
+                <div class="semestre-bloco__cabecalho">
+                    <span class="semestre-bloco__numero">03</span>
+                    <span class="semestre-bloco__periodo">3º Semestre</span>
+                </div>
+                <ul class="semestre-bloco__materias">
+                    <li><i class="fa-solid fa-database"></i> Banco de Dados</li>
+                    <li><i class="fa-solid fa-network-wired"></i> Comunicação de Dados</li>
+                    <li><i class="fa-solid fa-laptop-code"></i> Desenvolvimento de Sistemas II</li>
+                    <li><i class="fa-solid fa-layer-group"></i> Estrutura de Dados</li>
+                    <li><i class="fa-solid fa-lightbulb"></i> Princípios de Empreendedorismo</li>
+                    <li><i class="fa-solid fa-terminal"></i> Programação de Sistemas II</li>
+                </ul>
+            </div>
+
+            <div class="semestre-bloco">
+                <div class="semestre-bloco__cabecalho">
+                    <span class="semestre-bloco__numero">04</span>
+                    <span class="semestre-bloco__periodo">4º Semestre</span>
+                </div>
+                <ul class="semestre-bloco__materias">
+                    <li><i class="fa-solid fa-briefcase"></i> Administração de Negócios</li>
+                    <li><i class="fa-solid fa-hand-pointer"></i> Fatores Humanos em Sist. Comp.</li>
+                    <li><i class="fa-solid fa-gamepad"></i> Jogos Digitais</li>
+                    <li><i class="fa-solid fa-sitemap"></i> Modelagem de Negócios</li>
+                    <li><i class="fa-solid fa-people-group"></i> Organização e Interação de Equipes</li>
+                    <li><i class="fa-solid fa-rocket"></i> Projetos Empreendedores</li>
+                    <li><i class="fa-solid fa-shield-halved"></i> Segurança e Direito Digital</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 3º ANO -->
+    <div class="grade-ano">
+        <div class="grade-ano__titulo">
+            <i class="fa-solid fa-circle-3"></i> 3º Ano
+        </div>
+        <div class="grade-semestres">
+
+            <div class="semestre-bloco">
+                <div class="semestre-bloco__cabecalho">
+                    <span class="semestre-bloco__numero">05</span>
+                    <span class="semestre-bloco__periodo">5º Semestre</span>
+                </div>
+                <ul class="semestre-bloco__materias">
+                    <li><i class="fa-solid fa-wifi"></i> Objetos Inteligentes Conectados</li>
+                    <li><i class="fa-solid fa-user-tie"></i> Prát. Prof. em Anál. e Des. de Sistemas</li>
+                    <li><i class="fa-solid fa-chart-bar"></i> Probabilidade e Estatística Aplicadas</li>
+                    <li><i class="fa-solid fa-cloud"></i> Serviços em Nuvem</li>
+                    <li><i class="fa-solid fa-bug"></i> Teste de Software</li>
+                    <li><i class="fa-solid fa-database"></i> Tópicos de Banco de Dados</li>
+                    <li><i class="fa-solid fa-code-branch"></i> Tópicos de Eng. de Software</li>
+                </ul>
+            </div>
+
+            <div class="semestre-bloco">
+                <div class="semestre-bloco__cabecalho">
+                    <span class="semestre-bloco__numero">06</span>
+                    <span class="semestre-bloco__periodo">6º Semestre</span>
+                </div>
+                <ul class="semestre-bloco__materias">
+                    <li><i class="fa-solid fa-chart-line"></i> Ciência de Dados</li>
+                    <li><i class="fa-solid fa-magnifying-glass"></i> Metodologia de Pesq. em Computação</li>
+                    <li><i class="fa-solid fa-calculator"></i> Pesquisa Operacional Aplicada</li>
+                    <li><i class="fa-solid fa-pen-ruler"></i> Projetos e Inovação em TI</li>
+                    <li><i class="fa-solid fa-boxes-stacked"></i> Sistemas Integrados de Gestão</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 4º ANO -->
+    <div class="grade-ano grade-ano--ultimo">
+        <div class="grade-ano__titulo">
+            <i class="fa-solid fa-circle-4"></i> 4º Ano
+        </div>
+        <div class="grade-semestres">
+
+            <div class="semestre-bloco">
+                <div class="semestre-bloco__cabecalho">
+                    <span class="semestre-bloco__numero">07</span>
+                    <span class="semestre-bloco__periodo">7º Semestre</span>
+                </div>
+                <ul class="semestre-bloco__materias">
+                    <li><i class="fa-solid fa-building-columns"></i> Governança de TI</li>
+                    <li><i class="fa-solid fa-server"></i> Infraestrutura Distribuída</li>
+                    <li><i class="fa-solid fa-brain"></i> Inteligência Artificial</li>
+                    <li><i class="fa-solid fa-chart-pie"></i> Modelagem e Simulação</li>
+                    <li><i class="fa-solid fa-file-pen"></i> TCC I — Trabalho de Conclusão</li>
+                </ul>
+            </div>
+
+            <div class="semestre-bloco">
+                <div class="semestre-bloco__cabecalho">
+                    <span class="semestre-bloco__numero">08</span>
+                    <span class="semestre-bloco__periodo">8º Semestre</span>
+                </div>
+                <ul class="semestre-bloco__materias">
+                    <li><i class="fa-solid fa-handshake"></i> Estágio em Sistemas de Informação</li>
+                    <li><i class="fa-solid fa-file-circle-check"></i> TCC II — Trabalho de Conclusão</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SEÇÃO: DEPOIMENTOS DE ALUNOS
+════════════════════════════════════════════ -->
+<div class="secao-depoimentos">
+    <div class="cabecalho-secao">
+        <div class="cabecalho-secao__linha"></div>
+        <h2>O que dizem nossos alunos</h2>
+        <p class="cabecalho-secao__descricao">Histórias reais de quem escolheu o Mackenzie para construir sua carreira.</p>
+    </div>
+
+    <div class="lista-depoimentos">
+
+        <div class="depoimento-card">
+            <div class="depoimento-card__aspas">
+                <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <p class="depoimento-card__texto">
+                "O curso me preparou de verdade pro mercado. Saí com estágio confirmado ainda no 3º ano — algo que não esperava tão cedo."
+            </p>
+            <div class="depoimento-card__autor">
+                <div class="depoimento-card__avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="depoimento-card__dados">
+                    <strong>Lucas Ferreira</strong>
+                    <span>Formando 2025 · Desenvolvedor Backend</span>
+                </div>
             </div>
         </div>
+
+        <div class="depoimento-card">
+            <div class="depoimento-card__aspas">
+                <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <p class="depoimento-card__texto">
+                "Trabalho de dia e estudo à noite. A grade noturna do Mackenzie foi o que tornou isso possível, sem abrir mão da qualidade."
+            </p>
+            <div class="depoimento-card__autor">
+                <div class="depoimento-card__avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="depoimento-card__dados">
+                    <strong>Aline Costa</strong>
+                    <span>3º ano · Analista de Dados Jr.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="depoimento-card">
+            <div class="depoimento-card__aspas">
+                <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <p class="depoimento-card__texto">
+                "Os professores têm experiência real no mercado. Aprendi muito além da teoria — aprendi como as coisas funcionam de verdade."
+            </p>
+            <div class="depoimento-card__autor">
+                <div class="depoimento-card__avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="depoimento-card__dados">
+                    <strong>Rafael Souza</strong>
+                    <span>Formado 2024 · Engenheiro de Software</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
-<!-- STATUS -->
-<div class="status-bar">
-    <div class="pill">
-        <span class="dot"></span>
-        Inscrições Abertas — Vestibular 2026/2º Semestre
+<!-- ═══════════════════════════════════════════
+     SEÇÃO: FAQ
+════════════════════════════════════════════ -->
+<div class="secao-faq">
+    <div class="cabecalho-secao">
+        <div class="cabecalho-secao__linha cabecalho-secao__linha--branca"></div>
+        <h2 class="cabecalho-secao__titulo--branco">Perguntas Frequentes</h2>
+        <p class="cabecalho-secao__descricao cabecalho-secao__descricao--clara">Tire suas dúvidas sobre o processo seletivo e o curso.</p>
+    </div>
+
+    <div class="lista-faq">
+
+        <div class="faq-item">
+            <div class="faq-item__pergunta">
+                <i class="fa-solid fa-circle-question faq-item__icone"></i>
+                <span>Posso usar minha nota do ENEM para ingressar?</span>
+                <i class="fa-solid fa-chevron-down faq-item__seta"></i>
+            </div>
+            <div class="faq-item__resposta">
+                Sim. O Mackenzie aceita a nota do ENEM como forma de ingresso. Você também pode optar pelo vestibular próprio da universidade, realizado ao longo do ano.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-item__pergunta">
+                <i class="fa-solid fa-circle-question faq-item__icone"></i>
+                <span>Existe bolsa de estudo disponível?</span>
+                <i class="fa-solid fa-chevron-down faq-item__seta"></i>
+            </div>
+            <div class="faq-item__resposta">
+                Sim. O Mackenzie participa do ProUni e do FIES, além de oferecer bolsas próprias para alunos com bom desempenho acadêmico. Consulte os critérios no site oficial.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-item__pergunta">
+                <i class="fa-solid fa-circle-question faq-item__icone"></i>
+                <span>O curso é presencial ou tem modalidade EaD?</span>
+                <i class="fa-solid fa-chevron-down faq-item__seta"></i>
+            </div>
+            <div class="faq-item__resposta">
+                O curso de Sistemas de Informação no Campus Higienópolis é presencial, período noturno. Algumas disciplinas optativas podem ter componentes semipresenciais, conforme a legislação vigente.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-item__pergunta">
+                <i class="fa-solid fa-circle-question faq-item__icone"></i>
+                <span>Qual é a duração do curso e quantas aulas por semana?</span>
+                <i class="fa-solid fa-chevron-down faq-item__seta"></i>
+            </div>
+            <div class="faq-item__resposta">
+                O curso tem duração de 4 anos (8 semestres). As aulas acontecem de segunda a sexta-feira no período noturno, geralmente das 19h às 23h, com variação conforme o semestre.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-item__pergunta">
+                <i class="fa-solid fa-circle-question faq-item__icone"></i>
+                <span>Onde fica o Campus Higienópolis?</span>
+                <i class="fa-solid fa-chevron-down faq-item__seta"></i>
+            </div>
+            <div class="faq-item__resposta">
+                O Campus Higienópolis fica na Rua da Consolação, 896, próximo à estação de metrô Consolação (Linha 2-Verde). É bem acessível por transporte público.
+            </div>
+        </div>
+
     </div>
 </div>
 
-<!-- SECTION HEADING -->
-<div class="section-head">
-    <h2>Processos Seletivos<br><em>Campus Higienópolis</em></h2>
-</div>
-
-<!-- CARDS COM FLEXBOX -->
-<div class="cards-row">
-    <div class="card">
-        <div class="card-img red">💻</div>
-        <div class="card-content">
-            <span class="card-tag">Graduação</span>
-            <h3>Sistemas de Informação</h3>
-            <p>Forme-se em 4 anos com grade que une tecnologia, gestão e inovação. Curso presencial noturno — ideal para quem trabalha durante o dia.</p>
-            <a href="https://www.mackenzie.br" class="card-link" target="_blank">Conhecer o curso →</a>
+<!-- ═══════════════════════════════════════════
+     RODAPÉ
+════════════════════════════════════════════ -->
+<footer class="rodape">
+    <div class="rodape__logo">
+        <div class="logo-redondo logo-redondo--bordado">
+            <img src="mackenzie-logo-branco.png" alt="Logo Mackenzie">
+        </div>
+        <div class="rodape__info">
+            <strong>Universidade Presbiteriana Mackenzie</strong>
+            <span>Campus Higienópolis — São Paulo</span>
         </div>
     </div>
-    <div class="card">
-        <div class="card-img gray">📋</div>
-        <div class="card-content">
-            <span class="card-tag">Como se Inscrever</span>
-            <h3>Vestibular & ENEM</h3>
-            <p>Use sua nota do ENEM ou realize a prova própria do Mackenzie. Bolsas disponíveis via ProUni e FIES para quem se qualificar.</p>
-            <a href="https://www.mackenzie.br/processos-seletivos/vestibular-graduacao/sao-paulo-higienopolis" class="card-link" target="_blank">Inscrever-se agora →</a>
-        </div>
+    <div class="rodape__links">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
     </div>
-    <div class="card">
-        <div class="card-img dark">🏛️</div>
-        <div class="card-content">
-            <span class="card-tag">Sobre a FCI</span>
-            <h3>Faculdade de Computação e Informática</h3>
-            <p>A FCI oferece cursos de tecnologia de alta qualidade em Higienópolis, com laboratórios modernos e professores experientes do mercado.</p>
-            <a href="https://www.mackenzie.br" class="card-link" target="_blank">Sobre a faculdade →</a>
-        </div>
-    </div>
-</div>
-
-<!-- NÚMEROS -->
-<div class="numbers">
-    <div class="number-item">
-        <span class="num">4</span>
-        <span class="lbl">Anos de duração</span>
-    </div>
-    <div class="number-item">
-        <span class="num">Noturno</span>
-        <span class="lbl">Período</span>
-    </div>
-    <div class="number-item">
-        <span class="num">SP</span>
-        <span class="lbl">Higienópolis</span>
-    </div>
-    <div class="number-item">
-        <span class="num">FCI</span>
-        <span class="lbl">Faculdade</span>
-    </div>
-    <div class="number-item">
-        <span class="num">2026</span>
-        <span class="lbl">Próxima turma</span>
-    </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-    <div class="ft-logo">
-        <div class="logo-circle">M</div>
-        <span>Universidade Presbiteriana Mackenzie</span>
-    </div>
-    <p>Desenvolvido por Natália e Gabrielly · Trabalho de Flexbox · 2025</p>
+    <p class="rodape__creditos">Desenvolvido por Natália e Gabrielly · Trabalho de Flexbox · 2025</p>
 </footer>
 
 </body>
