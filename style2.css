@@ -1,0 +1,534 @@
+/* Resetando estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+/* Header */
+.cabecalho {
+    background: #ffffff;
+    height: 64px;
+    padding: 0 48px;
+    border-bottom: 3px solid #cc0000;
+    
+/* FLEXBOX*/
+    display: flex; /* Ativa o flexbox */
+    justify-content: space-between; /* Joga a logo pra esquerda e os links pra direita */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.cabecalho__logo, .cabecalho__links {
+    display: flex;
+    align-items: center; /* Alinha os itens internamente no centro da linha */
+    gap: 12px; /* Cria um espaço de 12px entre os itens (Flex Gap) */
+    text-decoration: none;
+}
+
+.logo-redondo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #cc0000;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza a imagem exatamente no meio do círculo */
+    overflow: hidden;
+}
+
+.logo-redondo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cabecalho__logo span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    font-size: 20px;
+    color: #1a1a1a;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.cabecalho__links a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: #555555;
+    padding: 6px 14px;
+    border: 1.5px solid #dddddd;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.cabecalho__links a:hover {
+    border-color: #cc0000;
+    color: #cc0000;
+}
+
+.cabecalho__link--destaque {
+    background: #cc0000;
+    color: #ffffff !important;
+    border-color: #cc0000 !important;
+}
+
+/* Banner */
+.banner {
+    background: #0f0f0f;
+    min-height: 440px;
+    padding: 64px 80px;
+    position: relative;
+    overflow: hidden;
+/* FLEXBOX */
+    display: flex;
+    justify-content: space-between; /* Separa texto (esquerda) da decoração (direita) */
+    align-items: center; 
+}
+
+.banner__conteudo {
+/* FLEXBOX */
+    display: flex;
+    flex-direction: column; /* Empilha o texto (etiqueta, titulo, botao) de cima para baixo */
+    gap: 22px; 
+    flex: 0 0 58%; /* Ocupa exatamente 58% da largura do contêiner pai */
+    z-index: 2;
+}
+
+.banner__etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #cc0000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border: 1.5px solid #cc0000;
+    padding: 5px 14px;
+    width: fit-content;
+}
+
+.banner__titulo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 0.92;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.banner__subtitulo {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.8;
+}
+
+.botao-inscricao {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #cc0000;
+    color: #ffffff;
+    padding: 14px 28px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+.banner__decoracao {
+    position: relative;
+    flex: 0 0 280px; /*tamanho fixo de 280px */
+    height: 280px;
+    z-index: 2;
+
+/* FLEXBOX */
+    display: flex;
+    align-items: center; /* Centraliza perfeitamente os círculos... */
+    justify-content: center; /* ... no eixo X e Y da caixa */
+}
+
+.circulo-grande, .circulo-pequeno {
+    position: absolute;
+    border-radius: 50%;
+}
+.circulo-grande { width: 260px; height: 260px; border: 1px solid rgb(204, 0, 0); }
+.circulo-pequeno { width: 170px; height: 170px; border: 1px solid rgba(204, 0, 0, 0.25); }
+
+.sigla-fci {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 80px;
+    font-weight: 700;
+    color: rgb(204, 0, 0);
+}
+
+/* Cards */
+.titulo-secao {
+    padding: 64px 80px 36px;
+}
+
+.linha-destaque {
+    width: 40px; height: 3px; background: #cc0000; margin-bottom: 18px;
+}
+
+.titulo-secao h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.titulo-secao p {
+    color: #888888;
+}
+
+.cards-container {
+    padding: 0 80px 80px;
+    
+/* FLEXBOX */
+    display: flex;
+    flex-direction: row; /* Coloca os cards lado a lado */
+    gap: 20px; /* Espaço entre os cards */
+    flex-wrap: wrap; /* Se a tela diminuir, quebra os cards para a linha de baixo (ESSENCIAL) */
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    transition: 0.25s;
+    
+/* FLEXBOX */
+    display: flex;
+    flex-direction: column; /* Organiza capa em cima e conteúdo embaixo */
+    flex: 1 1 260px; /* 1 Pode crescer ou encolher, mas largura base é 260px */
+}
+
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+
+.card__capa {
+    height: 200px;
+    overflow: hidden;
+
+/* FLEXBOX */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__capa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card__conteudo {
+    padding: 24px 28px;
+    gap: 10px;
+/* FLEXBOX */
+    display: flex;
+    flex-direction: column; 
+    flex: 1; /* Faz o conteúdo ocupar todo o espaço restante do card, empurrando o botão pro final */
+}
+
+.card__categoria {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: #cc0000;
+    text-transform: uppercase;
+}
+
+.card__conteudo h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 20px;
+}
+
+.card__conteudo p {
+    font-size: 14px;
+    color: #666666;
+    flex: 1; /* Preenche espaço vazio pra alinhar o link "Conhecer" sempre na base */
+}
+
+.card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #cc0000;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Barra Estatisticas */
+.estatisticas {
+    background: #111111;
+    
+/* FLEXBOX */
+    display: flex;
+    justify-content: space-around; /* Distribui os itens com espaçamento igual ao redor */
+    align-items: center;
+    flex-wrap: wrap; /* Quebra linha no mobile */
+}
+
+.estatistica-item {
+    padding: 40px 28px;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    
+/* FLEXBOX */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; /* odos os itens terão a mesma largura */
+}
+
+.estatistica-item:last-child { border-right: none; }
+
+.estatistica-item .valor {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 44px;
+    font-weight: 700;
+    color: #cc0000;
+}
+
+.estatistica-item .descricao {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+}
+
+/* Footer */
+.footer {
+    background: #cc0000;
+    padding: 24px 80px;
+    gap: 16px;
+    
+/* FLEXBOX */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer__esquerda, .footer__direita {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-redondo--bordado { border: 2px solid rgba(255, 255, 255, 0.4); }
+
+.footer__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__info strong { font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #ffffff; }
+.footer__info span { font-size: 12px; color: rgba(255, 255, 255, 0.6); }
+
+.footer__direita a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+
+.footer__creditos {
+    color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 14px;
+    font-size: 11px;
+}
+
+/* 
+   6. RESPONSIVIDADE (Mobile - Mínimo Viável)
+ */
+@media (max-width: 768px) {
+    /* Muda a direção de LINHA para COLUNA */
+    .cabecalho {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .banner {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    /* Esconde a arte pra não ocupar toda a tela do celular */
+    .banner__decoracao { display: none; }
+    
+    .banner__titulo { font-size: 48px; }
+    
+    .banner__acoes { justify-content: center; }
+
+    .titulo-secao, .cards-container, .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Na tela pequena, os itens crescem pra ocupar 100% da largura em vez de ficarem na mesma linha */
+    .estatistica-item {
+        flex: 1 1 100%; 
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .footer__esquerda {
+        flex-direction: column; /* Empilha a logo e o texto do rodapé */
+    }
+}
+
+/* Página Vídeo */
+#body-video {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: #f7f7f7;
+    color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o rodapé fique no fundo se a tela for muito alta */
+}
+
+
+/* Video e Side Bar */
+.layout-video {
+    padding: 64px 80px;
+    flex: 1; /* Faz esta seção crescer para empurrar o rodapé para baixo */
+    
+    /* FLEXBOX*/
+    display: flex;
+    gap: 40px; /* Cria um espaço de 40px entre o vídeo e a barra lateral */
+    align-items: flex-start; /* Alinha os blocos pelo topo. Sem isso, a sidebar esticaria até a altura do vídeo */
+}
+
+/* Vídeo */
+.video-principal {
+    /* FLEXBOX*/
+    display: flex;
+    flex-direction: column; /* Empilha o Título e o Vídeo */
+    gap: 20px;
+    flex: 1; /* Esta é a mágica: O vídeo ocupa TUDO o que sobrar de espaço na tela */
+}
+
+.video-principal h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+.video-player {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+    background: #000;
+}
+
+/* Barra Lateral (Sidebar) */
+.barra-lateral {
+    /* FLEXBOX*/
+    display: flex;
+    flex-direction: column; /* Empilha os cartões um em cima do outro */
+    gap: 24px;
+    flex: 0 0 320px; /* Não cresce (0), Não encolhe (0), Tamanho exato: 320px */
+}
+
+.cartao-lateral {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 24px;
+    border-top: 4px solid #cc0000;
+}
+
+.cartao-lateral h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+}
+
+.cartao-lateral ul {
+    list-style-position: inside;
+    color: #555555;
+    line-height: 2;
+}
+
+.cartao-lateral code {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: #cc0000;
+}
+
+.botao-voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    background: transparent;
+    color: #cc0000;
+    border: 2px solid #cc0000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.botao-voltar:hover {
+    background: #cc0000;
+    color: #ffffff;
+}
+
+
+
+/* Mobile Página vídeo */
+@media (max-width: 768px) {
+    /* Muda a estrutura da página de row para uma coluna única */
+    .layout-video {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 32px;
+    }
+
+    /* Permite que a sidebar que antes tinha 320px FIXa ocupe 100% da tela do celular */
+    .barra-lateral {
+        flex: auto;
+        width: 100%;
+    }
+
+}
