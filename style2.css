@@ -17,17 +17,23 @@ body {
     height: 64px;
     padding: 0 48px;
     border-bottom: 3px solid #cc0000;
-    
-/* FLEXBOX*/
-    display: flex; /* Ativa o flexbox */
-    justify-content: space-between; /* Joga a logo pra esquerda e os links pra direita */
-    align-items: center; /* Centraliza verticalmente */
+
+    /* FLEXBOX*/
+    display: flex;
+    /* Ativa o flexbox */
+    justify-content: space-between;
+    /* Joga a logo pra esquerda e os links pra direita */
+    align-items: center;
+    /* Centraliza verticalmente */
 }
 
-.cabecalho__logo, .cabecalho__links {
+.cabecalho_logo,
+.cabecalho_links {
     display: flex;
-    align-items: center; /* Alinha os itens internamente no centro da linha */
-    gap: 12px; /* Cria um espaço de 12px entre os itens (Flex Gap) */
+    align-items: center;
+    /* Alinha os itens internamente no centro da linha */
+    gap: 12px;
+    /* Cria um espaço de 12px entre os itens (Flex Gap) */
     text-decoration: none;
 }
 
@@ -38,7 +44,8 @@ body {
     background: #cc0000;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza a imagem exatamente no meio do círculo */
+    justify-content: center;
+    /* Centraliza a imagem exatamente no meio do círculo */
     overflow: hidden;
 }
 
@@ -48,7 +55,7 @@ body {
     object-fit: contain;
 }
 
-.cabecalho__logo span {
+.cabecalho_logo span {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 700;
     font-size: 20px;
@@ -57,7 +64,7 @@ body {
     text-transform: uppercase;
 }
 
-.cabecalho__links a {
+.cabecalho_links a {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -71,12 +78,12 @@ body {
     transition: 0.2s;
 }
 
-.cabecalho__links a:hover {
+.cabecalho_links a:hover {
     border-color: #cc0000;
     color: #cc0000;
 }
 
-.cabecalho__link--destaque {
+.cabecalho_link--destaque {
     background: #cc0000;
     color: #ffffff !important;
     border-color: #cc0000 !important;
@@ -89,22 +96,25 @@ body {
     padding: 64px 80px;
     position: relative;
     overflow: hidden;
-/* FLEXBOX */
+    /* FLEXBOX */
     display: flex;
-    justify-content: space-between; /* Separa texto (esquerda) da decoração (direita) */
-    align-items: center; 
+    justify-content: space-between;
+    /* Separa texto (esquerda) da decoração (direita) */
+    align-items: center;
 }
 
-.banner__conteudo {
-/* FLEXBOX */
+.banner_conteudo {
+    /* FLEXBOX */
     display: flex;
-    flex-direction: column; /* Empilha o texto (etiqueta, titulo, botao) de cima para baixo */
-    gap: 22px; 
-    flex: 0 0 58%; /* Ocupa exatamente 58% da largura do contêiner pai */
+    flex-direction: column;
+    /* Empilha o texto (etiqueta, titulo, botao) de cima para baixo */
+    gap: 22px;
+    flex: 0 0 58%;
+    /* Ocupa exatamente 58% da largura do contêiner pai */
     z-index: 2;
 }
 
-.banner__etiqueta {
+.banner_etiqueta {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -119,7 +129,7 @@ body {
     width: fit-content;
 }
 
-.banner__titulo {
+.banner_titulo {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 72px;
     font-weight: 700;
@@ -128,7 +138,7 @@ body {
     text-transform: uppercase;
 }
 
-.banner__subtitulo {
+.banner_subtitulo {
     font-size: 15px;
     color: rgba(255, 255, 255, 0.5);
     line-height: 1.8;
@@ -149,24 +159,38 @@ body {
     transition: 0.2s;
 }
 
-.banner__decoracao {
+.banner_decoracao {
     position: relative;
-    flex: 0 0 280px; /*tamanho fixo de 280px */
+    flex: 0 0 280px;
+    /*tamanho fixo de 280px */
     height: 280px;
     z-index: 2;
 
-/* FLEXBOX */
+    /* FLEXBOX */
     display: flex;
-    align-items: center; /* Centraliza perfeitamente os círculos... */
-    justify-content: center; /* ... no eixo X e Y da caixa */
+    align-items: center;
+    /* Centraliza perfeitamente os círculos... */
+    justify-content: center;
+    /* ... no eixo X e Y da caixa */
 }
 
-.circulo-grande, .circulo-pequeno {
+.circulo-grande,
+.circulo-pequeno {
     position: absolute;
     border-radius: 50%;
 }
-.circulo-grande { width: 260px; height: 260px; border: 1px solid rgb(204, 0, 0); }
-.circulo-pequeno { width: 170px; height: 170px; border: 1px solid rgba(204, 0, 0, 0.25); }
+
+.circulo-grande {
+    width: 260px;
+    height: 260px;
+    border: 1px solid rgb(204, 0, 0);
+}
+
+.circulo-pequeno {
+    width: 170px;
+    height: 170px;
+    border: 1px solid rgba(204, 0, 0, 0.25);
+}
 
 .sigla-fci {
     font-family: 'IBM Plex Mono', monospace;
@@ -181,7 +205,10 @@ body {
 }
 
 .linha-destaque {
-    width: 40px; height: 3px; background: #cc0000; margin-bottom: 18px;
+    width: 40px;
+    height: 3px;
+    background: #cc0000;
+    margin-bottom: 18px;
 }
 
 .titulo-secao h2 {
@@ -197,53 +224,62 @@ body {
 
 .cards-container {
     padding: 0 80px 80px;
-    
-/* FLEXBOX */
+
+    /* FLEXBOX */
     display: flex;
-    flex-direction: row; /* Coloca os cards lado a lado */
-    gap: 20px; /* Espaço entre os cards */
-    flex-wrap: wrap; /* Se a tela diminuir, quebra os cards para a linha de baixo (ESSENCIAL) */
+    flex-direction: row;
+    /* Coloca os cards lado a lado */
+    gap: 20px;
+    /* Espaço entre os cards */
+    flex-wrap: wrap;
+    /* Se a tela diminuir, quebra os cards para a linha de baixo (ESSENCIAL) */
 }
 
 .card {
     background: #ffffff;
     border: 1px solid #e0e0e0;
     transition: 0.25s;
-    
-/* FLEXBOX */
+
+    /* FLEXBOX */
     display: flex;
-    flex-direction: column; /* Organiza capa em cima e conteúdo embaixo */
-    flex: 1 1 260px; /* 1 Pode crescer ou encolher, mas largura base é 260px */
+    flex-direction: column;
+    /* Organiza capa em cima e conteúdo embaixo */
+    flex: 1 1 260px;
+    /* 1 Pode crescer ou encolher, mas largura base é 260px */
 }
 
-.card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
 
-.card__capa {
+.card_capa {
     height: 200px;
     overflow: hidden;
 
-/* FLEXBOX */
+    /* FLEXBOX */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.card__capa img {
+.card_capa img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.card__conteudo {
+.card_conteudo {
     padding: 24px 28px;
     gap: 10px;
-/* FLEXBOX */
+    /* FLEXBOX */
     display: flex;
-    flex-direction: column; 
-    flex: 1; /* Faz o conteúdo ocupar todo o espaço restante do card, empurrando o botão pro final */
+    flex-direction: column;
+    flex: 1;
+    /* Faz o conteúdo ocupar todo o espaço restante do card, empurrando o botão pro final */
 }
 
-.card__categoria {
+.card_categoria {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
     font-weight: 700;
@@ -251,18 +287,19 @@ body {
     text-transform: uppercase;
 }
 
-.card__conteudo h3 {
+.card_conteudo h3 {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 20px;
 }
 
-.card__conteudo p {
+.card_conteudo p {
     font-size: 14px;
     color: #666666;
-    flex: 1; /* Preenche espaço vazio pra alinhar o link "Conhecer" sempre na base */
+    flex: 1;
+    /* Preenche espaço vazio pra alinhar o link "Conhecer" sempre na base */
 }
 
-.card__link {
+.card_link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -276,26 +313,31 @@ body {
 /* Barra Estatisticas */
 .estatisticas {
     background: #111111;
-    
-/* FLEXBOX */
+
+    /* FLEXBOX */
     display: flex;
-    justify-content: space-around; /* Distribui os itens com espaçamento igual ao redor */
+    justify-content: space-around;
+    /* Distribui os itens com espaçamento igual ao redor */
     align-items: center;
-    flex-wrap: wrap; /* Quebra linha no mobile */
+    flex-wrap: wrap;
+    /* Quebra linha no mobile */
 }
 
 .estatistica-item {
     padding: 40px 28px;
     border-right: 1px solid rgba(255, 255, 255, 0.05);
-    
-/* FLEXBOX */
+
+    /* FLEXBOX */
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1; /* odos os itens terão a mesma largura */
+    flex: 1;
+    /* odos os itens terão a mesma largura */
 }
 
-.estatistica-item:last-child { border-right: none; }
+.estatistica-item:last-child {
+    border-right: none;
+}
 
 .estatistica-item .valor {
     font-family: 'IBM Plex Mono', monospace;
@@ -316,31 +358,42 @@ body {
     background: #cc0000;
     padding: 24px 80px;
     gap: 16px;
-    
-/* FLEXBOX */
+
+    /* FLEXBOX */
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.footer__esquerda, .footer__direita {
+.footer_esquerda,
+.footer_direita {
     display: flex;
     align-items: center;
     gap: 14px;
 }
 
-.logo-redondo--bordado { border: 2px solid rgba(255, 255, 255, 0.4); }
+.logo-redondo--bordado {
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
 
-.footer__info {
+.footer_info {
     display: flex;
     flex-direction: column;
 }
 
-.footer__info strong { font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #ffffff; }
-.footer__info span { font-size: 12px; color: rgba(255, 255, 255, 0.6); }
+.footer_info strong {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: #ffffff;
+}
 
-.footer__direita a {
+.footer_info span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer_direita a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -352,7 +405,7 @@ body {
     text-decoration: none;
 }
 
-.footer__creditos {
+.footer_creditos {
     color: rgba(255, 255, 255, 0.5);
     width: 100%;
     text-align: center;
@@ -362,9 +415,10 @@ body {
 }
 
 /* 
-   6. RESPONSIVIDADE (Mobile - Mínimo Viável)
+    RESPONSIVIDADE (Mobile)
  */
 @media (max-width: 768px) {
+
     /* Muda a direção de LINHA para COLUNA */
     .cabecalho {
         flex-direction: column;
@@ -379,22 +433,30 @@ body {
         text-align: center;
         gap: 40px;
     }
-    
-    /* Esconde a arte pra não ocupar toda a tela do celular */
-    .banner__decoracao { display: none; }
-    
-    .banner__titulo { font-size: 48px; }
-    
-    .banner__acoes { justify-content: center; }
 
-    .titulo-secao, .cards-container, .footer {
+    /* Esconde a arte pra não ocupar toda a tela do celular */
+    .banner_decoracao {
+        display: none;
+    }
+
+    .banner_titulo {
+        font-size: 48px;
+    }
+
+    .banner_acoes {
+        justify-content: center;
+    }
+
+    .titulo-secao,
+    .cards-container,
+    .footer {
         padding-left: 20px;
         padding-right: 20px;
     }
 
     /* Na tela pequena, os itens crescem pra ocupar 100% da largura em vez de ficarem na mesma linha */
     .estatistica-item {
-        flex: 1 1 100%; 
+        flex: 1 1 100%;
         border-right: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
@@ -405,8 +467,9 @@ body {
         justify-content: center;
     }
 
-    .footer__esquerda {
-        flex-direction: column; /* Empilha a logo e o texto do rodapé */
+    .footer_esquerda {
+        flex-direction: column;
+        /* Empilha a logo e o texto do rodapé */
     }
 }
 
@@ -417,28 +480,34 @@ body {
     color: #1a1a1a;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o rodapé fique no fundo se a tela for muito alta */
+    min-height: 100vh;
+    /* Garante que o rodapé fique no fundo se a tela for muito alta */
 }
 
 
 /* Video e Side Bar */
 .layout-video {
     padding: 64px 80px;
-    flex: 1; /* Faz esta seção crescer para empurrar o rodapé para baixo */
-    
+    flex: 1;
+    /* Faz esta seção crescer para empurrar o rodapé para baixo */
+
     /* FLEXBOX*/
     display: flex;
-    gap: 40px; /* Cria um espaço de 40px entre o vídeo e a barra lateral */
-    align-items: flex-start; /* Alinha os blocos pelo topo. Sem isso, a sidebar esticaria até a altura do vídeo */
+    gap: 40px;
+    /* Cria um espaço de 40px entre o vídeo e a barra lateral */
+    align-items: flex-start;
+    /* Alinha os blocos pelo topo. Sem isso, a sidebar esticaria até a altura do vídeo */
 }
 
 /* Vídeo */
 .video-principal {
     /* FLEXBOX*/
     display: flex;
-    flex-direction: column; /* Empilha o Título e o Vídeo */
+    flex-direction: column;
+    /* Empilha o Título e o Vídeo */
     gap: 20px;
-    flex: 1; /* Esta é a mágica: O vídeo ocupa TUDO o que sobrar de espaço na tela */
+    flex: 1;
+    /* Esta é a mágica: O vídeo ocupa TUDO o que sobrar de espaço na tela */
 }
 
 .video-principal h2 {
@@ -450,7 +519,7 @@ body {
 .video-player {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
     background: #000;
 }
 
@@ -458,9 +527,11 @@ body {
 .barra-lateral {
     /* FLEXBOX*/
     display: flex;
-    flex-direction: column; /* Empilha os cartões um em cima do outro */
+    flex-direction: column;
+    /* Empilha os cartões um em cima do outro */
     gap: 24px;
-    flex: 0 0 320px; /* Não cresce (0), Não encolhe (0), Tamanho exato: 320px */
+    flex: 0 0 320px;
+    /* Não cresce (0), Não encolhe (0), Tamanho exato: 320px */
 }
 
 .cartao-lateral {
@@ -514,10 +585,9 @@ body {
     color: #ffffff;
 }
 
-
-
 /* Mobile Página vídeo */
 @media (max-width: 768px) {
+
     /* Muda a estrutura da página de row para uma coluna única */
     .layout-video {
         flex-direction: column;
